@@ -1,9 +1,13 @@
 # Builds index.html for vyftwee.co.za. Fill in the values below, run
 # `python build.py`. It writes site/index.html; site/ is what is published.
-REG_NUMBER = "2026 /271349/07"
+REG_NUMBER = "2026/271349/07"
+LEGAL_NAME = "Vyf Twee (Pty) Ltd"
 EMAIL      = "info@vyftwee.co.za"
 ADDRESS    = "565 Coert Steynberg Street, Constantia Park, Pretoria, Gauteng, 0010, South Africa"
 CITY_52    = "Pretoria"   # where 52 Car Parts runs today
+WA_BUSINESS_NUMBER         = "27645260397"      # new: the business number (a person replies), no + or spaces
+WA_BUSINESS_NUMBER_DISPLAY = "+27 64 526 0397"  # new: the same, as people read it
+SITE_52    = "https://www.52carparts.co.za/"    # new: the www address works now; the root redirect comes later
 
 HTML = f"""<!DOCTYPE html>
 <html lang="en-ZA">
@@ -36,13 +40,13 @@ HTML = f"""<!DOCTYPE html>
       <h2>Our ventures</h2>
       <article class="venture">
         <div class="venture-name">
-          <h3><a href="https://52carparts.co.za/">52 Car Parts</a></h3>
+          <h3><a href="{SITE_52}">52 Car Parts</a></h3>
           <p class="status">Live in {CITY_52}</p>
         </div>
         <div class="venture-text">
           <p>Car parts sourced and delivered on WhatsApp. A client sends a photo of their licence disc, suppliers quote, the client chooses, and the part is collected, delivered and paid for after inspection.</p>
           <p>52 Car Parts is a brand of Vyf Twee. The name is the same idea in numbers: <span lang="af">vyf twee</span> is Afrikaans for five two.</p>
-          <p><a class="go" href="https://52carparts.co.za/">Visit 52carparts.co.za</a></p>
+          <p><a class="go" href="{SITE_52}">Visit 52carparts.co.za</a></p>
         </div>
       </article>
       <p class="next">More ventures will follow. Each one will be listed here.</p>
@@ -53,11 +57,12 @@ HTML = f"""<!DOCTYPE html>
     <div class="wrap">
       <h2>Company</h2>
       <dl>
-        <dt>Legal name</dt><dd>Vyf Twee</dd>
+        <dt>Legal name</dt><dd>{LEGAL_NAME}</dd>
         <dt>Registration number</dt><dd>{REG_NUMBER}</dd>
         <dt>Address</dt><dd>{ADDRESS}</dd>
         <dt>Email</dt><dd><a href="mailto:{EMAIL}">{EMAIL}</a></dd>
-        <dt>Brands</dt><dd><a href="https://52carparts.co.za/">52 Car Parts</a></dd>
+        <dt>WhatsApp</dt><dd><a href="https://wa.me/{WA_BUSINESS_NUMBER}">{WA_BUSINESS_NUMBER_DISPLAY}</a></dd>
+        <dt>Brands</dt><dd><a href="{SITE_52}">52 Car Parts</a></dd>
       </dl>
     </div>
   </section>
@@ -65,7 +70,7 @@ HTML = f"""<!DOCTYPE html>
 
 <footer class="foot">
   <div class="wrap">
-    <p>© Vyf Twee. This site uses no cookies or tracking. For how 52 Car Parts handles personal information, see its <a href="https://52carparts.co.za/privacy.html">privacy policy</a>.</p>
+    <p>© {LEGAL_NAME}. This site uses no cookies or tracking. For how 52 Car Parts handles personal information, see its <a href="{SITE_52}privacy.html">privacy policy</a>.</p>
   </div>
 </footer>
 </body>
