@@ -1,0 +1,75 @@
+# Builds index.html for vyftwee.co.za. Fill in the values below, run
+# `python build.py`. It writes site/index.html; site/ is what is published.
+REG_NUMBER = "2026 /271349/07"
+EMAIL      = "info@vyftwee.co.za"
+ADDRESS    = "565 Coert Steynberg Street, Constantia Park, Pretoria, Gauteng, 0010, South Africa"
+CITY_52    = "Pretoria"   # where 52 Car Parts runs today
+
+HTML = f"""<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vyf Twee | We build and run digital ventures</title>
+<meta name="description" content="Vyf Twee is a South African business that builds and runs digital ventures. Its first venture is 52 Car Parts.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#">Vyf Twee</a>
+    <nav aria-label="Sections"><a href="#ventures">Ventures</a><a href="#company">Company</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="say" lang="af">vyf twee</p>
+      <h1>We build and run digital ventures.</h1>
+      <p class="lead">Vyf Twee is a South African business that turns everyday problems into simple digital services, then runs them. Each venture gets its own name and its own customers; Vyf Twee owns and operates them.</p>
+    </div>
+  </section>
+
+  <section class="ventures" id="ventures">
+    <div class="wrap">
+      <h2>Our ventures</h2>
+      <article class="venture">
+        <div class="venture-name">
+          <h3><a href="https://52carparts.co.za/">52 Car Parts</a></h3>
+          <p class="status">Live in {CITY_52}</p>
+        </div>
+        <div class="venture-text">
+          <p>Car parts sourced and delivered on WhatsApp. A client sends a photo of their licence disc, suppliers quote, the client chooses, and the part is collected, delivered and paid for after inspection.</p>
+          <p>52 Car Parts is a brand of Vyf Twee. The name is the same idea in numbers: <span lang="af">vyf twee</span> is Afrikaans for five two.</p>
+          <p><a class="go" href="https://52carparts.co.za/">Visit 52carparts.co.za</a></p>
+        </div>
+      </article>
+      <p class="next">More ventures will follow. Each one will be listed here.</p>
+    </div>
+  </section>
+
+  <section class="company" id="company">
+    <div class="wrap">
+      <h2>Company</h2>
+      <dl>
+        <dt>Legal name</dt><dd>Vyf Twee</dd>
+        <dt>Registration number</dt><dd>{REG_NUMBER}</dd>
+        <dt>Address</dt><dd>{ADDRESS}</dd>
+        <dt>Email</dt><dd><a href="mailto:{EMAIL}">{EMAIL}</a></dd>
+        <dt>Brands</dt><dd><a href="https://52carparts.co.za/">52 Car Parts</a></dd>
+      </dl>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© Vyf Twee. This site uses no cookies or tracking. For how 52 Car Parts handles personal information, see its <a href="https://52carparts.co.za/privacy.html">privacy policy</a>.</p>
+  </div>
+</footer>
+</body>
+</html>
+"""
+open("site/index.html", "w", encoding="utf-8").write(HTML)
+print("built index.html")
