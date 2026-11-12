@@ -1,60 +1,118 @@
-/* Vyf Twee — jacaranda purple (Pretoria in October) on a cool white,
-   one expressive grotesque used at very different sizes. */
-@font-face { font-family: "Bricolage Grotesque"; src: url("fonts/bricolage-grotesque-latin-400-normal.woff2") format("woff2"); font-weight: 400; font-display: swap; }
-@font-face { font-family: "Bricolage Grotesque"; src: url("fonts/bricolage-grotesque-latin-600-normal.woff2") format("woff2"); font-weight: 600; font-display: swap; }
-@font-face { font-family: "Bricolage Grotesque"; src: url("fonts/bricolage-grotesque-latin-800-normal.woff2") format("woff2"); font-weight: 800; font-display: swap; }
+/* Vyf Twee — the colours of the Vyf Twee Groep logo: deep navy, ocean teal and
+   golden wheat on soft ivory, set in Inter (headings in Inter Display, as in the logo). */
+@font-face { font-family: "Inter"; src: url("fonts/Inter-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-SemiBold.woff2") format("woff2"); font-weight: 600; font-style: normal; font-display: swap; }
+@font-face { font-family: "Inter"; src: url("fonts/Inter-Bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Inter Display"; src: url("fonts/InterDisplay-Bold.woff2") format("woff2"); font-weight: 700; font-style: normal; font-display: swap; }
 
 :root {
-  --bg: #f6f7fa;
-  --ink: #1f2240;
-  --muted: #565a78;
-  --line: #d6d8e4;
-  --jacaranda: #6d4fb0;
-  --bloom: #e7e0f5;
-  --font: "Bricolage Grotesque", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --bg: #FAF7F0;          /* Soft Ivory */
+  --ink: #102A43;         /* Deep Navy: text, headings, panel text */
+  --muted: #4A5D70;
+  --line: #DCD8CE;
+  --link: #066B75;
+  --link-hover: #102A43;
+  --panel: #E3F0EF;       /* venture card, table header rows */
+  --wheat: #E8B44C;       /* Golden Wheat: small accents only, never text */
+  --focus: #066B75;       /* wheat is 1.77:1 on ivory, too faint for a focus ring */
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-display: "Inter Display", var(--font);
   color-scheme: light;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --bg: #15172b; --ink: #ecebf6; --muted: #aeb0c8; --line: #2e3150; --jacaranda: #b39ce8; --bloom: #262645; color-scheme: dark; }
+  :root {
+    --bg: #0E2438; --ink: #FAF7F0; --muted: #B7C3CE; --line: #24486A;
+    --link: #35B7B0; --link-hover: #FAF7F0; --panel: #183A56; --focus: #E8B44C;
+    color-scheme: dark;
+  }
 }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 400 1.0625rem/1.6 var(--font); }
-a { color: var(--jacaranda); text-underline-offset: 0.18em; }
-a:focus-visible { outline: 3px solid var(--jacaranda); outline-offset: 3px; border-radius: 2px; }
+a { color: var(--link); text-underline-offset: 0.18em; }
+a:hover { color: var(--link-hover); }
+a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
+strong, dt, th { font-weight: 600; }
 .wrap { width: min(980px, 100% - 2.5rem); margin-inline: auto; }
 
-.top { border-bottom: 1px solid var(--line); }
-.top .wrap { display: flex; justify-content: space-between; align-items: center; padding-block: 1.1rem; gap: 1rem; flex-wrap: wrap; }
-.mark { font-weight: 800; font-size: 1.3rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
-.top nav { display: flex; gap: 1.4rem; }
-.top nav a { color: var(--ink); text-decoration: none; }
-.top nav a:hover { text-decoration: underline; }
-
-.hero { padding-block: clamp(3.5rem, 10vw, 7rem) clamp(3rem, 7vw, 5rem); }
-.say { font-weight: 800; font-size: clamp(4.5rem, 17vw, 11rem); line-height: 0.82; letter-spacing: -0.045em; color: var(--jacaranda); margin: 0 0 2.4rem; padding-bottom: 0.08em; }
-h1 { font-weight: 600; font-size: clamp(1.9rem, 4.2vw, 3rem); line-height: 1.1; letter-spacing: -0.015em; margin: 0 0 1rem; max-width: 20ch; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; letter-spacing: -0.02em; }
+h1 { font-size: clamp(1.9rem, 4.2vw, 3rem); line-height: 1.1; margin: 0 0 1rem; max-width: 20ch; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); line-height: 1.2; margin: 0 0 1.5rem; }
 .lead { font-size: 1.2rem; color: var(--muted); max-width: 58ch; margin: 0; }
 
-h2 { font-weight: 800; font-size: clamp(1.6rem, 3vw, 2.1rem); letter-spacing: -0.015em; margin: 0 0 1.5rem; }
-.ventures { padding-block: clamp(2.5rem, 6vw, 4rem); border-top: 1px solid var(--line); }
-.venture { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 1.5rem 3rem; background: var(--bloom); border-radius: 14px; padding: clamp(1.5rem, 4vw, 2.5rem); }
-.venture h3 { font-weight: 800; font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1; letter-spacing: -0.03em; margin: 0; }
+/* Header */
+.top { border-bottom: 1px solid var(--line); }
+.top .wrap { display: flex; justify-content: space-between; align-items: center; padding-block: 1.1rem; gap: 1rem; flex-wrap: wrap; }
+.mark { display: block; text-decoration: none; }
+.mark img { display: block; height: 48px; width: auto; border-radius: 6px; }
+.top nav { display: flex; gap: 1.4rem; }
+.top nav a { color: var(--ink); font-weight: 600; text-decoration: none; }
+.top nav a:hover { text-decoration: underline; }
+
+/* Home page hero: a sunrise on the horizon, the same in light and dark mode.
+   The SVG's horizon (y=160 of 240) sits on the sky/sea edge: the sun stands
+   above it and its reflection (the bottom quarter of the SVG) falls into the sea. */
+.hero { --sun-w: clamp(200px, 30vw, 320px); --sun-right: calc((100% - min(980px, 100% - 2.5rem)) / 2 + 64px);
+  display: grid; grid-template-rows: 3fr 2fr; min-height: clamp(560px, 67vh, 680px); }
+.sky { position: relative; display: flex; align-items: flex-end; background: #087E8B; }
+.sky .wrap { padding-block: 3rem 40px; }
+.sky h1 { color: #FAF7F0; font-size: clamp(2.4rem, 5.4vw, 4rem); line-height: 1.05; margin: 0;
+  max-width: min(620px, 100% - var(--sun-w) - 88px); }
+.sun { position: absolute; z-index: 1; right: var(--sun-right); bottom: calc(var(--sun-w) * -0.25);
+  width: var(--sun-w); height: auto; }
+.sea { background: #102A43; }
+.sea .wrap { padding-block: 36px 3rem; }
+.hero .lead { color: #D6DEE6; font-size: 1.125rem; max-width: min(58ch, 100% - var(--sun-w) - 88px); margin: 0 0 1rem; }
+.hero .go { color: #35B7B0; font-weight: 600; }
+.hero .go:hover { color: #FAF7F0; }
+.hero a:focus-visible { outline-color: #E8B44C; }
+
+/* Ventures */
+.ventures { padding-block: clamp(2.5rem, 6vw, 4rem); }
+.venture { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 1.5rem 3rem; background: var(--panel); color: var(--ink); border-radius: 14px; padding: clamp(1.5rem, 4vw, 2.5rem); }
+.venture h3 { font-size: clamp(2rem, 4.5vw, 3rem); line-height: 1; margin: 0; }
+.venture h3::after { content: ""; display: block; width: 56px; height: 4px; border-radius: 2px; background: var(--wheat); margin-top: 0.9rem; }
 .venture h3 a { color: var(--ink); text-decoration: none; }
 .venture h3 a:hover { text-decoration: underline; }
-.status { margin: 0.6rem 0 0; color: var(--muted); }
+.status { margin: 0.8rem 0 0; color: var(--muted); }
 .venture-text p { margin: 0 0 0.9rem; max-width: 56ch; }
 .go { font-weight: 600; }
 .next { color: var(--muted); margin: 1.4rem 0 0; }
 
+/* Company */
 .company { padding-block: clamp(2.5rem, 6vw, 4rem); border-top: 1px solid var(--line); }
-.company dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.6rem 2rem; margin: 0; }
-.company dt { font-weight: 600; }
+.company dl { display: grid; grid-template-columns: fit-content(16rem) 1fr; gap: 0.6rem 2rem; margin: 0; }
 .company dd { margin: 0; color: var(--muted); }
 
+/* Policy and venture pages */
+.doc { padding-block: clamp(2.5rem, 6vw, 4rem); }
+.doc .wrap > * { max-width: 70ch; }
+.doc .wrap > .table { max-width: none; }
+.doc h1 { max-width: 24ch; }
+.doc h1::before { content: ""; display: block; width: 56px; height: 4px; border-radius: 2px; background: var(--wheat); margin-bottom: 1.2rem; }
+.doc h2 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); margin: 2.4rem 0 0.8rem; }
+.doc p { margin: 0 0 1rem; }
+.doc .lead { margin-bottom: 1rem; }
+.doc ol, .doc ul { margin: 0 0 1rem; padding-left: 1.4rem; }
+.doc li { margin-bottom: 0.4rem; }
+.doc .table { overflow-x: auto; margin: 0 0 1.2rem; border: 1px solid var(--line); border-radius: 12px; }
+.doc table { border-collapse: collapse; width: 100%; font-size: 0.98rem; }
+.doc th, .doc td { text-align: left; vertical-align: top; padding: 0.6rem 0.8rem; border-bottom: 1px solid var(--line); }
+.doc tr > :not(:last-child) { border-right: 1px solid var(--line); }
+.doc tbody tr:last-child > * { border-bottom: 0; }
+.doc thead th { background: var(--panel); color: var(--ink); }
+
+/* Footer */
 .foot { border-top: 1px solid var(--line); padding-block: 1.8rem 2.4rem; color: var(--muted); font-size: 0.95rem; }
-.foot p { margin: 0; max-width: 70ch; }
+.foot p { margin: 0.4rem 0 0; max-width: 70ch; }
+.foot .policies { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin-bottom: 0.9rem; }
 
 @media (max-width: 700px) {
+  .mark img { height: 40px; }
+  .hero { --sun-w: 130px; --sun-right: 1.25rem; grid-template-rows: auto auto; min-height: 0; }
+  .sky .wrap { padding-block: 2.5rem calc(var(--sun-w) * 0.5 + 18px); }
+  .sky h1 { font-size: 2.375rem; max-width: none; }
+  .sea .wrap { padding-block: calc(var(--sun-w) * 0.25 + 22px) 2.5rem; }
+  .hero .lead { max-width: none; }
   .venture { grid-template-columns: 1fr; }
   .company dl { grid-template-columns: 1fr; gap: 0.1rem; }
   .company dd { margin-bottom: 0.7rem; }
