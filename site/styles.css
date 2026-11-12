@@ -26,6 +26,7 @@ a:focus-visible { outline: 3px solid var(--jacaranda); outline-offset: 3px; bord
 .top { border-bottom: 1px solid var(--line); }
 .top .wrap { display: flex; justify-content: space-between; align-items: center; padding-block: 1.1rem; gap: 1rem; flex-wrap: wrap; }
 .mark { font-weight: 800; font-size: 1.3rem; color: var(--ink); text-decoration: none; letter-spacing: -0.01em; }
+.mark img { display: block; height: 48px; width: auto; border-radius: 6px; }
 .top nav { display: flex; gap: 1.4rem; }
 .top nav a { color: var(--ink); text-decoration: none; }
 .top nav a:hover { text-decoration: underline; }
@@ -47,12 +48,29 @@ h2 { font-weight: 800; font-size: clamp(1.6rem, 3vw, 2.1rem); letter-spacing: -0
 .next { color: var(--muted); margin: 1.4rem 0 0; }
 
 .company { padding-block: clamp(2.5rem, 6vw, 4rem); border-top: 1px solid var(--line); }
-.company dl { display: grid; grid-template-columns: max-content 1fr; gap: 0.6rem 2rem; margin: 0; }
+.company dl { display: grid; grid-template-columns: fit-content(16rem) 1fr; gap: 0.6rem 2rem; margin: 0; }
 .company dt { font-weight: 600; }
 .company dd { margin: 0; color: var(--muted); }
 
+/* Policy and venture pages */
+.doc { padding-block: clamp(2.5rem, 6vw, 4rem); }
+.doc .wrap > * { max-width: 70ch; }
+.doc .wrap > .table { max-width: none; }
+.doc h1 { max-width: 24ch; }
+.doc h2 { font-size: clamp(1.3rem, 2.4vw, 1.6rem); margin: 2.4rem 0 0.8rem; }
+.doc p { margin: 0 0 1rem; }
+.doc .lead { margin-bottom: 1rem; }
+.doc ol, .doc ul { margin: 0 0 1rem; padding-left: 1.4rem; }
+.doc li { margin-bottom: 0.4rem; }
+.doc .table { overflow-x: auto; margin: 0 0 1.2rem; }
+.doc table { border-collapse: collapse; width: 100%; max-width: 980px; font-size: 0.98rem; }
+.doc th, .doc td { text-align: left; vertical-align: top; padding: 0.6rem 0.8rem; border: 1px solid var(--line); }
+.doc thead th { background: var(--bloom); font-weight: 600; }
+.doc tbody th { font-weight: 600; }
+
 .foot { border-top: 1px solid var(--line); padding-block: 1.8rem 2.4rem; color: var(--muted); font-size: 0.95rem; }
-.foot p { margin: 0; max-width: 70ch; }
+.foot p { margin: 0.4rem 0 0; max-width: 70ch; }
+.foot .policies { display: flex; flex-wrap: wrap; gap: 0.4rem 1.4rem; margin-bottom: 0.9rem; }
 
 @media (max-width: 700px) {
   .venture { grid-template-columns: 1fr; }
