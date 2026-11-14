@@ -7,13 +7,13 @@ EMAIL      = "info@vyftwee.co.za"    # general enquiries
 EMAIL_52   = "admin@vyftwee.co.za"   # orders, complaints, warranty and privacy requests
 ADDRESS    = "565 Coert Steynberg Street, Constantia Park, Pretoria, Gauteng, 0010, South Africa"
 FOOTER_ADDRESS = "565 Coert Steynberg Street, Constantia Park, Pretoria, 0010"
-CITY_52    = "Pretoria"   # where 52 Car Parts runs today
 WA_BUSINESS_NUMBER         = "27645260397"      # the business number (a person replies), no + or spaces
 WA_BUSINESS_NUMBER_DISPLAY = "+27 64 526 0397"  # the same, as people read it
 WA_52         = "27795255987"      # the 52 Car Parts WhatsApp number, no + or spaces
 WA_52_DISPLAY = "+27 79 525 5987"  # the same, as people read it
 SITE_52    = "https://www.52carparts.co.za/"    # the www address works now; the root redirect comes later
-POLICY_EFFECTIVE_DATE = "12 November 2026"      # replaces {EFFECTIVE_DATE} in content/policies/*.md
+POLICY_EFFECTIVE_DATE = "12 November 2026"      # replaces {EFFECTIVE_DATE} in content/policies/*.md (version 1.0 policies)
+POLICY_V11_EFFECTIVE_DATE = "14 November 2026"  # replaces {EFFECTIVE_DATE_V11} (Terms, Delivery, Refunds and Cancellations v1.1); set to the merge date
 
 import html
 import re
@@ -181,7 +181,7 @@ HOME = f"""<main>
       <article class="venture">
         <div class="venture-name">
           <h3><a href="/52-car-parts">52 Car Parts</a></h3>
-          <p class="status">Live in {CITY_52}</p>
+          <p class="status">Live in South Africa</p>
         </div>
         <div class="venture-text">
           <p>Car parts sourced and delivered on WhatsApp. A client sends a photo of their licence disc, suppliers quote, the client chooses, and the part is collected, delivered and paid for after inspection.</p>
@@ -237,7 +237,7 @@ CAR_PARTS = f"""<main class="doc">
     <p class="lead">Vehicle parts sourced for you and delivered to your door. You inspect the part first and pay only if you accept it.</p>
 
     <h2>What you buy</h2>
-    <p>We source new, reconditioned and used vehicle parts from independent suppliers and deliver them to you by courier. We currently serve clients in {CITY_52}.</p>
+    <p>We source new, aftermarket, reconditioned and used vehicle parts from independent suppliers in Gauteng and deliver them to you by courier anywhere in South Africa.</p>
     <p>52 Car Parts is a brand of {LEGAL_NAME}. When you buy a part through 52 Car Parts, you buy it from {LEGAL_NAME}.</p>
 
     <h2>How it works</h2>
@@ -266,7 +266,7 @@ CAR_PARTS = f"""<main class="doc">
 
 write("52-car-parts/index.html", page(
     "52 Car Parts | Vyf Twee",
-    f"52 Car Parts, a brand of {LEGAL_NAME}, sources new, reconditioned and used vehicle parts and delivers them by courier in {CITY_52}. Inspect first, pay only if you accept.",
+    f"52 Car Parts, a brand of {LEGAL_NAME}, sources new, aftermarket, reconditioned and used vehicle parts from suppliers in Gauteng and delivers them by courier anywhere in South Africa. Inspect first, pay only if you accept.",
     CAR_PARTS,
 ))
 
@@ -275,7 +275,7 @@ write("52-car-parts/index.html", page(
 
 for name, _ in POLICIES:
     source = ROOT / "content" / "policies" / f"{name}.md"
-    text = source.read_text(encoding="utf-8").replace("{EFFECTIVE_DATE}", POLICY_EFFECTIVE_DATE)
+    text = source.read_text(encoding="utf-8").replace("{EFFECTIVE_DATE_V11}", POLICY_V11_EFFECTIVE_DATE).replace("{EFFECTIVE_DATE}", POLICY_EFFECTIVE_DATE)
     left = re.findall(r"\{[A-Z_]+\}", text)
     if left:
         raise SystemExit(f"{source}: unreplaced placeholder(s) {left}")

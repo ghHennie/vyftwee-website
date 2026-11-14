@@ -1,14 +1,14 @@
 # Delivery Policy
 
-We deliver in Pretoria on a date and time agreed with you for each order, and the delivery fee is included in your quote.
+We deliver anywhere in South Africa through selected courier partners, on a date and time agreed with you for each order, and the delivery fee is included in your quote.
 
 ## 1. Where we deliver
 
-We currently serve clients in Pretoria. If your address is outside our area, we will tell you before you accept a quote.
+We deliver to any address in South Africa, including outlying and rural areas. Your quote is calculated for your delivery address, and includes any surcharge the courier charges for your area.
 
 ## 2. When we deliver
 
-The delivery date and time are agreed with you for each order and confirmed on WhatsApp before the courier collects the part. Unless we agree otherwise, delivery takes place within 30 days of your accepting the quote. If we cannot deliver within that time, you may cancel without cost.
+The delivery date and time are agreed with you for each order and confirmed on WhatsApp before the courier collects the part. How long delivery takes depends on the distance between the supplier and your address, so we do not publish fixed delivery times. We work with selected partners, including our couriers, who share our values and our focus on service. Unless we agree otherwise, delivery takes place within 30 days of your accepting the quote. If we cannot deliver within that time, you may cancel without cost.
 
 ## 3. How delivery works
 
@@ -29,4 +29,4 @@ If nobody is available at the agreed time, the courier will contact you on the n
 
 The part remains at the supplier's risk while it is collected and transported. Ownership and risk pass to you once you have accepted the part and paid for it.
 
-*Version 1.0, effective {EFFECTIVE_DATE}.*
+*Version 1.1, effective {EFFECTIVE_DATE_V11}.*
