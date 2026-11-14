@@ -20,7 +20,7 @@ Vyf Twee runs the 52 Car Parts platform and is responsible to you for every part
 
 ## 2. Our service
 
-We source new, reconditioned and used vehicle parts from independent suppliers, arrange delivery by courier, and sell the part to you once you accept it. We currently serve clients in Pretoria.
+We source new, aftermarket, reconditioned and used vehicle parts from independent suppliers, arrange delivery by courier to any address in South Africa, and sell the part to you once you accept it.
 
 ## 3. How an order works
 
@@ -66,4 +66,4 @@ Contact us first on WhatsApp or by email, and we will respond within five workin
 
 We may update these terms. The version that applies to your order is the one published when you accepted the quote.
 
-*Version 1.0, effective {EFFECTIVE_DATE}.*
+*Version 1.1, effective {EFFECTIVE_DATE_V11}.*
