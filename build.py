@@ -13,7 +13,7 @@ WA_52         = "27795255987"      # the 52 Car Parts WhatsApp number, no + or s
 WA_52_DISPLAY = "+27 79 525 5987"  # the same, as people read it
 SITE_52    = "https://www.52carparts.co.za/"    # the www address works now; the root redirect comes later
 POLICY_EFFECTIVE_DATE = "12 November 2026"      # replaces {EFFECTIVE_DATE} in content/policies/*.md (version 1.0 policies)
-POLICY_V11_EFFECTIVE_DATE = "14 November 2026"  # replaces {EFFECTIVE_DATE_V11} (Terms and Delivery v1.1); set to the merge date
+POLICY_V11_EFFECTIVE_DATE = "14 November 2026"  # replaces {EFFECTIVE_DATE_V11} (Terms, Delivery, Refunds and Cancellations v1.1); set to the merge date
 
 import html
 import re
